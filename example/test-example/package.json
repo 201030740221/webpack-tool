@@ -1,0 +1,70 @@
+{
+    "name": "demo",
+    "version": "1.0.0",
+    "description": "webpack-tool-demo",
+    "main": "index.js",
+    "scripts": {
+        "start": "node --harmony node_modules/.bin/webpack-tool server",
+        "component": "node --harmony node_modules/.bin/webpack-tool component",
+        "build": "node --harmony node_modules/.bin/webpack-tool build",
+        "test": "node --harmony node_modules/.bin/webpack-tool test"
+    },
+    "author": "demo",
+    "readmeFilename": "README.md",
+    "license": "ISC",
+    "devDependencies": {
+        "jsx-loader": "^0.13.2",
+        "react-hot-loader": "^1.2.8",
+        "webpack-tool": "git+ssh://git@git:7999/wilson/webpack-tool.git#master"
+    },
+    "projectConfig": {
+        "env": "development",
+        "apiHost": "http://api.m.sipin.com",
+        "websocket": "ws://push.sipin.test2"
+    },
+    "serverConfig": {
+        "devPort": 3210,
+        "webPort": 3200,
+        "isProxy": false,
+        "proxyHost": "http://www.sipin.com",
+        "proxyUrl": ["/api"],
+        "entry": "/dist/__version__",
+        "publicPath": "/",
+        "liveload": true
+    },
+    "buildConfig": {
+        "hot": false,
+        "output": "/dist/__version__",
+        "jsPath": "/src/js/pages",
+        "htmlPath": "/src/html",
+        "cssPath": "/src/css/pages",
+        "resolve":{
+            "alias": {
+                "html": "/src/html",
+                "css": "/src/css",
+                "fonts": "/src/fonts",
+                "images": "/src/images",
+                "pages": "/src/js/pages",
+                "vendor": "/src/js/vendor",
+                "modules": "/src/js/modules"
+            },
+            "extensions": [ "", ".js", ".jsx", ".cjsx", ".coffee"]
+        },
+        "global": {
+            "$": "jquery",
+            "jQuery": "jquery",
+            "window.jQuery": "jquery",
+            "React": "react",
+            "window.React": "react"
+        }
+    },
+    "developmentBuildConfig": {
+
+    },
+    "qaBuildConfig": {
+
+    },
+    "productionBuildConfig": {
+
+    }
+}

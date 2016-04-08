@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title><%=_assets.htmlWebpackPlugin.options.title || 'Webpack App'%></title>
+    <% if (_assets.htmlWebpackPlugin.files.favicon) { %>
+    <link rel="shortcut icon" href="<%=o._assets.htmlWebpackPlugin.files.favicon%>">
+    <% } %>
+    <% for (var css in _assets.htmlWebpackPlugin.files.css) { %>
+    <link href="<%=_assets.htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+    <% } %>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- 引用外部 HTML -->
+    <%- include('include.html') %>
+    <div id="app-container">
+        <!-- 引用小于8k 图片 -->
+        <img src="~images/email_verify_icon.png" />
+        <!-- 引用大于8k 图片 -->
+        <img src="~images/register-gift.png" />
+        <h3><%=title%></h3>
+        <p>Released under the
+        <a href="<%=license.url%>"><%=license.name%></a>.</p>
+        <h4>Features</h4>
+        <ul>
+        <% for (var i=0; i<features.length; i++) { %>
+            <li><%=features[i]%></li>
+        <% } %>
+        </ul>
+    </div>
+    <% for (var chunk in _assets.htmlWebpackPlugin.files.chunks) { %>
+    <script src="<%=_assets.htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+    <% } %>
+  </body>
+</html>

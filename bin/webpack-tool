@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+var path = require('path');
+var fs   = require('fs');
+var lib  = path.join( process.cwd(), "node_modules", "webpack-tool", "lib" );
+
+require(lib + '/cli');

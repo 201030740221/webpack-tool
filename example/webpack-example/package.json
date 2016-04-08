@@ -1,0 +1,83 @@
+{
+    "name": "demo",
+    "version": "1.0.0",
+    "description": "webpack-tool-demo",
+    "main": "index.js",
+    "scripts": {
+        "start": "node --harmony node_modules/.bin/webpack-tool server",
+        "release": "node --harmony node_modules/.bin/webpack-tool release",
+        "clean": "node --harmony node_modules/.bin/webpack-tool clean",
+        "component": "node --harmony node_modules/.bin/webpack-tool component",
+        "build": "node --harmony node_modules/.bin/webpack-tool build",
+        "test": "node --harmony node_modules/.bin/webpack-tool test"
+    },
+    "author": "demo",
+    "readmeFilename": "README.md",
+    "license": "ISC",
+    "devDependencies": {
+        "gulp": "^3.8.11",
+        "gulp-util": "^3.0.6",
+        "coffee-loader": "^0.7.2",
+        "coffee-script": "^1.9.3",
+        "css-loader": "^0.15.5",
+        "file-loader": "^0.8.4",
+        "html-loader": "^0.3.0",
+        "react-hot-loader": "^1.2.8",
+        "static-loader": "^0.1.8",
+        "style-loader": "^0.12.3",
+        "stylus-loader": "^1.2.1",
+        "url-loader": "^0.5.6",
+        "webpack-tool": "git+ssh://git@git:7999/wilson/webpack-tool.git#master"
+    },
+    "projectConfig": {
+        "env": "development",
+        "apiHost": "http://api.m.sipin.com",
+        "websocket": "ws://push.sipin.test2"
+    },
+    "serverConfig": {
+        "devPort": 3210,
+        "webPort": 3200,
+        "isProxy": false,
+        "proxyHost": "http://www.sipin.com",
+        "proxyUrl": ["/api"],
+        "entry": "/dist/__version__",
+        "publicPath": "/",
+        "liveload": true
+    },
+    "buildConfig": {
+        "hot": false,
+        "output": "/dist/__version__",
+        "prebuiltPath": "/src/js/prebuilt",
+        "jsPath": "/src/js/pages",
+        "htmlPath": "/src/html",
+        "cssPath": "/src/css/pages",
+        "resolve":{
+            "alias": {
+                "html": "/src/html",
+                "css": "/src/css",
+                "fonts": "/src/fonts",
+                "images": "/src/images",
+                "pages": "/src/js/pages",
+                "vendor": "/src/js/vendor",
+                "modules": "/src/js/modules"
+            },
+            "extensions": [ "", ".js", ".jsx", ".cjsx", ".coffee"]
+        },
+        "global": {
+            "$": "jquery",
+            "jQuery": "jquery",
+            "window.jQuery": "jquery",
+            "React": "react",
+            "window.React": "react"
+        }
+    },
+    "developmentBuildConfig": {
+
+    },
+    "qaBuildConfig": {
+
+    },
+    "productionBuildConfig": {
+
+    }
+}

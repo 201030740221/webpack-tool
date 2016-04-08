@@ -1,0 +1,44 @@
+{
+  "name": "webpack-tool",
+  "version": "1.0.0",
+  "description": "基于 webpack 的构建工具，依赖 webpack 的 loaders 与 plugins 作为静态资源管理与构建。",
+  "main": "index.coffee",
+  "scripts": {
+    "watch": "coffee -o lib/  -cw src/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "webpack-tool": "./bin/webpack-tool"
+  },
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "coffee-script": "^1.9.3",
+    "react": "^0.13.3",
+    "webpack": "^1.10.1",
+    "webpack-dev-server": "^1.10.1",
+    "karma": ">=0.12 < 1",
+    "expect": "^1.6.0"
+  },
+  "dependencies": {
+    "async": "^1.4.0",
+    "browser-sync": "^2.8.0",
+    "coffee-script": "^1.9.3",
+    "commander": "^2.8.1",
+    "del": "^1.2.0",
+    "ejs": "^2.3.3",
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.6",
+    "http-proxy-middleware": "^0.3.2",
+    "karma-chrome-launcher": "^0.1.8",
+    "karma-mocha": "^0.1.10",
+    "karma-sourcemap-loader": "^0.3.4",
+    "karma-spec-reporter": "0.0.19",
+    "karma-webpack": "^1.5.0",
+    "loader-utils": "^0.2.11",
+    "lodash": "^3.10.0",
+    "node-file": "^0.1.1",
+    "object-assign": "^3.0.0",
+    "gulp-sequence": "^0.4.0"
+  }
+}
